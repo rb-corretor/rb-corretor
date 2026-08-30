@@ -1,40 +1,179 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0B2B50"><title>Minha Rede Saúde</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0B2B50">
+<title>Minha Rede Saúde</title>
 <style>
-:root{--n:#0b2b50;--n2:#174f80;--b:#2f73ff;--bg:#f4f8fc;--ink:#172238;--m:#718096;--l:#dfe7ef;--g:#16845a;--gb:#eaf7f0}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(#eef5fc,#fff);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
-.wrap{max-width:940px;margin:auto;padding:12px 12px 90px}.header{background:linear-gradient(135deg,var(--n),var(--n2));color:#fff;border-radius:24px;padding:20px;box-shadow:0 16px 40px rgba(11,43,80,.16)}
-.logo{display:flex;align-items:center;gap:14px}.logo img{width:235px;height:76px;object-fit:contain;background:rgba(255,255,255,.98);border-radius:15px;padding:5px}.header h1{margin:17px 0 5px;font-size:29px}.header p{margin:0;color:#cbd9e8;font-size:13px}.card{background:#fff;border:1px solid var(--l);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 7px 26px rgba(30,53,82,.045)}
-.title{font-size:20px;font-weight:950}.sub{font-size:12px;color:var(--m);margin-top:4px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.label{font-size:10px;color:var(--m);text-transform:uppercase;letter-spacing:.06em;font-weight:900;display:block;margin-bottom:6px}select,input{width:100%;height:47px;border:1px solid var(--l);border-radius:11px;padding:0 12px;background:#fff;color:var(--ink);outline:none}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.btn{height:44px;border:1px solid var(--l);border-radius:11px;padding:0 15px;background:#fff;font-weight:850;cursor:pointer}.primary{background:var(--b);border-color:var(--b);color:#fff}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}.chip{font-size:10px;font-weight:850;border:1px solid var(--l);border-radius:99px;padding:7px 9px;color:#52617a;background:#fff}.list{margin-top:13px;border:1px solid var(--l);border-radius:15px;overflow:hidden}.item{padding:15px;border-top:1px solid var(--l);display:flex;justify-content:space-between;gap:12px;align-items:flex-start;cursor:pointer}.item:first-child{border-top:0}.item:hover{background:#fbfdff}.item b{font-size:14px}.meta{display:block;margin-top:4px;font-size:11px;color:var(--m)}.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:9px;font-weight:850;padding:5px 7px;border-radius:99px;border:1px solid #c9eadb;color:var(--g);background:var(--gb)}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.box{border:1px solid var(--l);background:#fbfdff;border-radius:15px;padding:14px}.metric{display:flex;justify-content:space-between;border-top:1px solid var(--l);padding-top:10px;margin-top:10px;font-size:11px}.metric strong{font-size:22px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.fact{background:#f7f9fc;border:1px solid var(--l);border-radius:12px;padding:11px}.fact small{display:block;color:var(--m)}.fact b{display:block;margin-top:4px;font-size:12px}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(940px,100%);background:#fff;border-top:1px solid var(--l);display:flex;justify-content:space-around;padding:8px}.bottom button{border:0;background:none;color:var(--m);font-size:10px;font-weight:850}.bottom button.active{color:var(--b)}.page{display:none}.page.active{display:block}.note{font-size:10px;color:var(--m);line-height:1.45;margin-top:12px}
-@media(max-width:620px){.grid,.compare{grid-template-columns:1fr}.logo img{width:190px;height:64px}.item{flex-direction:column}.tags{justify-content:flex-start}}
-</style></head>
+:root{--navy:#0B2B50;--navy2:#174F80;--blue:#2F73FF;--bg:#F4F8FC;--ink:#172238;--muted:#718096;--line:#DFE7EF;--green:#16845A;--greenbg:#EAF7F0}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#EEF5FC,#fff 62%);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.wrap{max-width:940px;margin:auto;padding:14px 14px 92px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;padding:20px;box-shadow:0 16px 40px rgba(11,43,80,.16)}
+.brand{display:flex;align-items:center}.brand img{width:250px;height:86px;object-fit:contain;object-position:left center;background:#fff;border-radius:14px;padding:5px}
+.hero h1{font-size:29px;margin:18px 0 5px}.hero p{margin:0;color:#CBD9E8;font-size:13px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.nav button{height:42px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:0 14px;color:var(--muted);font-weight:850;cursor:pointer}
+.nav button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.page{display:none}.page.active{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 7px 25px rgba(30,53,82,.045)}
+.title{font-size:20px;font-weight:950}.sub{font-size:12px;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}
+.label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:900;margin-bottom:6px}
+input,select{width:100%;height:47px;border:1px solid var(--line);border-radius:11px;padding:0 12px;background:#fff;color:var(--ink);outline:none}
+.btn{height:44px;border:1px solid var(--line);border-radius:11px;padding:0 15px;background:#fff;font-weight:850;cursor:pointer}
+.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.chip{padding:7px 9px;border:1px solid var(--line);border-radius:99px;background:#fff;color:#52617A;font-size:10px;font-weight:850}
+.list{margin-top:13px;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.item{padding:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start;cursor:pointer}
+.item:first-child{border-top:0}.item:hover{background:#FBFDFF}.item b{font-size:14px}
+.meta{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:9px;font-weight:850;padding:5px 7px;border-radius:99px;border:1px solid #C9EADB;color:var(--green);background:var(--greenbg)}
+.status{font-size:10px;color:var(--muted);margin-top:9px}
+.detailTitle{font-size:22px;font-weight:950}.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.fact{border:1px solid var(--line);background:#F7F9FC;border-radius:12px;padding:11px}.fact small{display:block;color:var(--muted)}.fact b{display:block;margin-top:4px;font-size:12px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.box{border:1px solid var(--line);background:#FBFDFF;border-radius:15px;padding:14px}
+.metric{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;margin-top:10px;font-size:11px}.metric strong{font-size:22px}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(940px,100%);background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px}
+.bottom button{border:0;background:none;color:var(--muted);font-size:10px;font-weight:850}.bottom button.active{color:var(--blue)}
+@media(max-width:620px){.grid,.compare{grid-template-columns:1fr}.brand img{width:205px;height:70px}.item{flex-direction:column}.tags{justify-content:flex-start}}
+</style>
+</head>
 <body>
 <div class="wrap">
-<header class="header"><div class="logo"><img src="logo-minha-rede-saude.png" alt="Minha Rede Saúde"></div><h1>Onde seu plano atende?</h1><p>Sua rede de atendimento em um só lugar.</p></header>
-<section id="search" class="page active"><div class="card"><div class="title">Consultar rede credenciada</div><div class="sub">Escolha a operadora, o produto e a cidade.</div>
-<div class="grid"><div><label class="label">Operadora</label><select id="op"></select></div><div><label class="label">Produto</label><select id="product"></select></div><div><label class="label">Cidade</label><input id="city" placeholder="Digite a cidade"></div><div><label class="label">Atendimento</label><select id="type"><option>Todos</option><option>Hospital</option><option>Pronto-socorro</option><option>Maternidade</option><option>Laboratório</option><option>Clínica</option></select></div></div>
-<div class="row"><button class="btn primary" id="searchBtn">Buscar rede →</button></div><div id="summary" class="chips"></div><div id="results" class="list"><div class="item"><div><b>Comece escolhendo a cidade.</b><span class="meta">Ex.: Sete Lagoas - MG</span></div></div></div>
-<div class="note">Protótipo visual com os dados de demonstração já trabalhados. A versão nacional terá a rede oficial sincronizada.</div></div></section>
-<section id="comparePage" class="page"><div class="card"><div class="title">Comparar redes</div><div class="sub">Compare dois produtos na mesma cidade.</div><div class="grid"><div><label class="label">Plano A</label><select id="planA"></select></div><div><label class="label">Plano B</label><select id="planB"></select></div><div><label class="label">Cidade</label><input id="cmpCity" placeholder="Digite a cidade"></div></div><div class="row"><button class="btn primary" id="compareBtn">Comparar →</button></div><div id="compareOut"></div></div></section>
-<section id="productsPage" class="page"><div class="card"><div class="title">Produtos</div><div id="productList" class="list"></div></div></section>
-<section id="detailPage" class="page"><div class="card"><button class="btn" id="backBtn">← Voltar</button><div id="detail" style="margin-top:12px"></div></div></section>
+<header class="hero">
+  <div class="brand"><img src="Minha_Rede_Saude_logo.png" alt="Minha Rede Saúde"></div>
+  <h1>Onde seu plano atende?</h1>
+  <p>Sua rede de atendimento em um só lugar.</p>
+</header>
+
+<nav class="nav">
+  <button class="active" data-page="search">Consultar rede</button>
+  <button data-page="compare">Comparar redes</button>
+  <button data-page="products">Produtos</button>
+</nav>
+
+<section id="search" class="page active">
+<div class="card">
+  <div class="title">Consultar rede credenciada</div>
+  <div class="sub">Escolha a operadora, o produto e a cidade.</div>
+  <div class="grid">
+    <div><label class="label">Operadora</label><select id="op"><option>Carregando...</option></select></div>
+    <div><label class="label">Produto</label><select id="product"><option>Carregando...</option></select></div>
+    <div><label class="label">Cidade</label><input id="city" placeholder="Digite a cidade"></div>
+    <div><label class="label">Atendimento</label><select id="type"><option value="">Todos</option><option>Hospital</option><option>Pronto-socorro</option><option>Maternidade</option><option>Laboratório</option><option>Clínica</option></select></div>
+  </div>
+  <div class="row"><button class="btn primary" id="searchBtn">Buscar rede →</button></div>
+  <div id="summary" class="chips"></div>
+  <div id="results" class="list"></div>
+  <div id="status" class="status">Conectando ao banco...</div>
 </div>
-<nav class="bottom"><button class="active" data-page="search">⌕<br>Rede</button><button data-page="comparePage">⇄<br>Comparar</button><button data-page="productsPage">▦<br>Produtos</button></nav>
+</section>
+
+<section id="compare" class="page">
+<div class="card">
+  <div class="title">Comparar redes</div>
+  <div class="sub">Compare dois produtos na mesma cidade.</div>
+  <div class="grid">
+    <div><label class="label">Plano A</label><select id="planA"></select></div>
+    <div><label class="label">Plano B</label><select id="planB"></select></div>
+    <div><label class="label">Cidade</label><input id="cmpCity" placeholder="Digite a cidade"></div>
+    <div><label class="label">Atendimento</label><select id="cmpType"><option value="">Todos</option><option>Hospital</option><option>Pronto-socorro</option><option>Maternidade</option><option>Laboratório</option><option>Clínica</option></select></div>
+  </div>
+  <div class="row"><button class="btn primary" id="compareBtn">Comparar →</button></div>
+  <div id="compareOut"></div>
+</div>
+</section>
+
+<section id="products" class="page">
+<div class="card"><div class="title">Produtos</div><div class="sub">Produtos cadastrados no banco.</div><div id="productList" class="list"></div></div>
+</section>
+
+<section id="detail" class="page">
+<div class="card"><button class="btn" id="backBtn">← Voltar</button><div id="detailBox" style="margin-top:12px"></div></div>
+</section>
+</div>
+
+<nav class="bottom">
+<button class="active" data-page="search">⌕<br>Rede</button>
+<button data-page="compare">⇄<br>Comparar</button>
+<button data-page="products">▦<br>Produtos</button>
+</nav>
+
 <script>
-const catalog={"Amil":["Prata","Ouro","Platinum"],"SulAmérica":["Direto Nacional","Clássico 100","Especial RC"],"MedSênior":["MG 3"],"Aurora Saúde":["RMBH A500"],"Bradesco":["Nacional Flex","Nacional Plus"],"Unimed":["Unifácil Flex","Unipart Flex"],"Hapvida":["Adapt 300 Estadual","Nosso Plano"],"NotreDame":["Advance","Premium"],"Usisaúde":["Exclusivo Plus"]};
-const network={"Sete Lagoas - MG":[["Irmã Nossa Senhora das Graças","Hospital","Hospital|Maternidade|Pronto-socorro","Sete Lagoas - MG"],["Núcleo de Especialidades Clínico-Cirúrgicas","Clínica","Especialidades","Sete Lagoas - MG"]],"Belo Horizonte - MG":[["Hospital Mater Dei Contorno","Hospital","Hospital|Maternidade|Pronto-socorro","R. Mato Grosso, 1100 - Santo Agostinho"],["Hospital Felicio Rocho","Hospital","Hospital|Pronto-socorro","Belo Horizonte - MG"],["Hospital Vera Cruz","Hospital","Hospital|Maternidade|Pronto-socorro","Belo Horizonte - MG"],["Hospital LifeCenter","Hospital","Hospital|Pronto-socorro","Belo Horizonte - MG"],["Laboratório Hermes Pardini","Laboratório","Exames|Análises clínicas","R. dos Inconfidentes, 515 - Savassi"]]};
-const op=document.getElementById("op"),product=document.getElementById("product");
-function show(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll(".bottom button").forEach(b=>b.classList.toggle("active",b.dataset.page===id))}
-function fillOps(){op.innerHTML=Object.keys(catalog).map(o=>`<option>${o}</option>`).join("");fillProducts()}
-function fillProducts(){product.innerHTML=(catalog[op.value]||[]).map(p=>`<option>${p}</option>`).join("")}
-function rows(){let r=network[document.getElementById("city").value.trim()]||[];const t=document.getElementById("type").value;if(t!=="Todos")r=r.filter(x=>(x[1]+" "+x[2]).toLowerCase().includes(t.toLowerCase()));return r}
-function render(){const c=document.getElementById("city").value.trim(),r=rows();document.getElementById("summary").innerHTML=`<span class=chip>${op.value}</span><span class=chip>${product.value}</span><span class=chip>${c||"Cidade não informada"}</span>`;document.getElementById("results").innerHTML=r.length?r.map((x,i)=>`<div class="item" data-i="${i}"><div><b>${x[0]}</b><span class=meta>${x[1]} • ${x[3]}</span></div><div class=tags>${x[2].split("|").map(s=>`<span class=tag>${s}</span>`).join("")}</div></div>`).join(""):`<div class=item><div><b>Nenhum registro nesta demonstração.</b><span class=meta>Teste com Sete Lagoas - MG ou Belo Horizonte - MG.</span></div></div>`;document.querySelectorAll("#results [data-i]").forEach(e=>e.onclick=()=>openDetail(r[+e.dataset.i]))}
-function openDetail(x){document.getElementById("detail").innerHTML=`<div class=detailTitle>${x[0]}</div><div class=meta>${x[1]} • ${x[3]}</div><div class=facts><div class=fact><small>Operadora</small><b>${op.value}</b></div><div class=fact><small>Produto</small><b>${product.value}</b></div><div class=fact><small>Atendimentos</small><b>${x[2].split("|").join(", ")}</b></div><div class=fact><small>Status</small><b>Rede encontrada</b></div></div><div class=row><button class="btn primary" onclick="alert('Mapa será conectado na versão final.')">Ver no mapa</button></div>`;show("detailPage")}
-function compare(){const c=document.getElementById("cmpCity").value.trim(),r=network[c]||[];document.getElementById("compareOut").innerHTML=`<div class=compare><div class=box><b>${document.getElementById("planA").value}</b><div class=metric><span>Prestadores demo</span><strong>${r.length}</strong></div></div><div class=box><b>${document.getElementById("planB").value}</b><div class=metric><span>Prestadores demo</span><strong>${r.length}</strong></div></div></div><div class=box style="margin-top:10px"><b>Rede em comum na demonstração</b><div class=metric><span>Estabelecimentos</span><strong>${Math.max(0,r.length-1)}</strong></div></div>`}
-document.querySelectorAll(".bottom button").forEach(b=>b.onclick=()=>show(b.dataset.page));op.onchange=fillProducts;document.getElementById("searchBtn").onclick=render;document.getElementById("compareBtn").onclick=compare;document.getElementById("backBtn").onclick=()=>show("search");
-fillOps();const all=Object.entries(catalog).flatMap(([o,ps])=>ps.map(p=>`${o} — ${p}`));document.getElementById("planA").innerHTML=all.map(x=>`<option>${x}</option>`).join("");document.getElementById("planB").innerHTML=all.map(x=>`<option>${x}</option>`).join("");document.getElementById("productList").innerHTML=all.map(x=>`<div class=item><div><b>${x.split(" — ")[0]}</b><span class=meta>${x.split(" — ")[1]}</span></div></div>`).join("");
-</script></body></html>
+const op=document.getElementById("op");
+const product=document.getElementById("product");
+let allProducts=[];
+
+const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+
+function show(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));
+  document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));
+}
+async function getJson(url){
+  const r=await fetch(url,{headers:{Accept:"application/json"}});
+  const txt=await r.text();
+  if(!r.ok) throw new Error(txt||("HTTP "+r.status));
+  return JSON.parse(txt);
+}
+function fillProducts(){
+  const ps=allProducts.filter(p=>p.operator_name===op.value);
+  product.innerHTML=ps.length?ps.map(p=>`<option value="${esc(p.product_name)}">${esc(p.product_name)}</option>`).join(""):`<option>Nenhum produto cadastrado</option>`;
+}
+function buildCompareOptions(){
+  const opts=allProducts.map(p=>`<option value="${esc(p.operator_name)}|||${esc(p.product_name)}">${esc(p.operator_name)} — ${esc(p.product_name)}</option>`).join("");
+  document.getElementById("planA").innerHTML=opts;
+  document.getElementById("planB").innerHTML=opts;
+}
+async function load(){
+  try{
+    const ops=await getJson("/api/operators");
+    allProducts=await getJson("/api/products");
+    op.innerHTML=ops.map(o=>`<option>${esc(o.name)}</option>`).join("");
+    fillProducts();buildCompareOptions();
+    document.getElementById("productList").innerHTML=allProducts.map(p=>`<div class=item><div><b>${esc(p.operator_name)}</b><span class=meta>${esc(p.product_name)}</span></div></div>`).join("");
+    document.getElementById("status").textContent="Banco conectado.";
+  }catch(e){
+    document.getElementById("status").textContent="API indisponível. Confira se a pasta api está no deploy.";
+    op.innerHTML=`<option>Não carregou</option>`;product.innerHTML=`<option>Não carregou</option>`;
+  }
+}
+async function search(){
+  const city=document.getElementById("city").value.trim();
+  const type=document.getElementById("type").value;
+  document.getElementById("summary").innerHTML=`<span class=chip>${esc(op.value)}</span><span class=chip>${esc(product.value)}</span><span class=chip>${esc(city||"Cidade não informada")}</span>`;
+  if(!city){document.getElementById("results").innerHTML='<div class=item><b>Digite uma cidade.</b></div>';return;}
+  try{
+    const d=await getJson(`/api/network?operator=${encodeURIComponent(op.value)}&product=${encodeURIComponent(product.value)}&city=${encodeURIComponent(city)}&type=${encodeURIComponent(type)}`);
+    document.getElementById("results").innerHTML=d.rows.length?d.rows.map((x,i)=>`<div class=item data-i="${i}"><div><b>${esc(x.provider_name)}</b><span class=meta>${esc(x.provider_type||"Prestador")} • ${esc(x.address||city)}</span></div><div class=tags>${String(x.services||"").split(/[;,|]/).filter(Boolean).map(s=>`<span class=tag>${esc(s.trim())}</span>`).join("")}</div></div>`).join(""):`<div class=item><div><b>Nenhum prestador encontrado.</b><span class=meta>Essa combinação ainda pode não ter sido carregada.</span></div></div>`;
+    document.querySelectorAll("#results [data-i]").forEach(el=>el.onclick=()=>openDetail(d.rows[+el.dataset.i]));
+  }catch(e){
+    document.getElementById("results").innerHTML='<div class=item><div><b>Erro ao consultar a rede.</b><span class=meta>Verifique o deploy da API e as variáveis do Supabase.</span></div></div>';
+  }
+}
+function openDetail(x){
+  document.getElementById("detailBox").innerHTML=`<div class=detailTitle>${esc(x.provider_name)}</div><div class=meta>${esc(x.provider_type||"Prestador")} • ${esc(x.address||"")}</div><div class=facts><div class=fact><small>Operadora</small><b>${esc(op.value)}</b></div><div class=fact><small>Produto</small><b>${esc(product.value)}</b></div><div class=fact><small>Atendimentos</small><b>${esc(x.services||"Não informado")}</b></div><div class=fact><small>Telefone</small><b>${esc(x.phone||"Não informado")}</b></div></div>`;
+  show("detail");
+}
+async function compare(){
+  const a=document.getElementById("planA").value.split("|||"), b=document.getElementById("planB").value.split("|||");
+  const city=document.getElementById("cmpCity").value.trim(), type=document.getElementById("cmpType").value;
+  if(!city){document.getElementById("compareOut").innerHTML='<div class=meta>Digite uma cidade.</div>';return;}
+  try{
+    const d=await getJson(`/api/compare?operatorA=${encodeURIComponent(a[0])}&productA=${encodeURIComponent(a[1])}&operatorB=${encodeURIComponent(b[0])}&productB=${encodeURIComponent(b[1])}&city=${encodeURIComponent(city)}&type=${encodeURIComponent(type)}`);
+    document.getElementById("compareOut").innerHTML=`<div class=compare><div class=box><b>${esc(a[0])} — ${esc(a[1])}</b><div class=metric><span>Exclusivos</span><strong>${d.summary.onlyA}</strong></div></div><div class=box><b>${esc(b[0])} — ${esc(b[1])}</b><div class=metric><span>Exclusivos</span><strong>${d.summary.onlyB}</strong></div></div></div><div class=box style="margin-top:10px"><b>Rede em comum</b><div class=metric><span>Prestadores</span><strong>${d.summary.common}</strong></div></div>`;
+  }catch(e){document.getElementById("compareOut").innerHTML='<div class=meta>Não foi possível comparar ainda.</div>';}
+}
+document.querySelectorAll("[data-page]").forEach(b=>b.onclick=()=>show(b.dataset.page));
+op.onchange=fillProducts;
+document.getElementById("searchBtn").onclick=search;
+document.getElementById("compareBtn").onclick=compare;
+document.getElementById("backBtn").onclick=()=>show("search");
+load();
+</script>
+</body></html>
