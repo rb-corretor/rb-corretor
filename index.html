@@ -6,51 +6,29 @@
 <meta name="theme-color" content="#0B2B50">
 <title>Minha Rede Saúde</title>
 <style>
-:root{--navy:#0B2B50;--navy2:#174F80;--blue:#2F73FF;--bg:#F4F8FC;--ink:#172238;--muted:#718096;--line:#DFE7EF;--green:#16845A;--greenbg:#EAF7F0}
-*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(180deg,#EEF5FC,#fff 62%);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
-.wrap{max-width:940px;margin:auto;padding:14px 14px 92px}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;padding:20px;box-shadow:0 16px 40px rgba(11,43,80,.16)}
-.brand{display:flex;align-items:center}.brand img{width:250px;height:86px;object-fit:contain;object-position:left center;background:#fff;border-radius:14px;padding:5px}
-.hero h1{font-size:29px;margin:18px 0 5px}.hero p{margin:0;color:#CBD9E8;font-size:13px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
-.nav button{height:42px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:0 14px;color:var(--muted);font-weight:850;cursor:pointer}
-.nav button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.page{display:none}.page.active{display:block}
-.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 7px 25px rgba(30,53,82,.045)}
-.title{font-size:20px;font-weight:950}.sub{font-size:12px;color:var(--muted);margin-top:4px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}
-.label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:900;margin-bottom:6px}
-input,select{width:100%;height:47px;border:1px solid var(--line);border-radius:11px;padding:0 12px;background:#fff;color:var(--ink);outline:none}
-.btn{height:44px;border:1px solid var(--line);border-radius:11px;padding:0 15px;background:#fff;font-weight:850;cursor:pointer}
-.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-.chip{padding:7px 9px;border:1px solid var(--line);border-radius:99px;background:#fff;color:#52617A;font-size:10px;font-weight:850}
-.list{margin-top:13px;border:1px solid var(--line);border-radius:15px;overflow:hidden}
-.item{padding:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start;cursor:pointer}
-.item:first-child{border-top:0}.item:hover{background:#FBFDFF}.item b{font-size:14px}
-.meta{display:block;font-size:11px;color:var(--muted);margin-top:4px}
-.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
-.tag{font-size:9px;font-weight:850;padding:5px 7px;border-radius:99px;border:1px solid #C9EADB;color:var(--green);background:var(--greenbg)}
-.status{font-size:10px;color:var(--muted);margin-top:9px}
-.detailTitle{font-size:22px;font-weight:950}.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
-.fact{border:1px solid var(--line);background:#F7F9FC;border-radius:12px;padding:11px}.fact small{display:block;color:var(--muted)}.fact b{display:block;margin-top:4px;font-size:12px}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.box{border:1px solid var(--line);background:#FBFDFF;border-radius:15px;padding:14px}
-.metric{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;margin-top:10px;font-size:11px}.metric strong{font-size:22px}
-.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(940px,100%);background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px}
-.bottom button{border:0;background:none;color:var(--muted);font-size:10px;font-weight:850}.bottom button.active{color:var(--blue)}
-@media(max-width:620px){.grid,.compare{grid-template-columns:1fr}.brand img{width:205px;height:70px}.item{flex-direction:column}.tags{justify-content:flex-start}}
+:root{--navy:#0B2B50;--navy2:#174F80;--blue:#2F73FF;--teal:#18B89D;--bg:#F4F8FC;--ink:#162238;--muted:#718096;--line:#DEE7EF;--green:#16845A;--greenbg:#EAF7F0}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#EEF5FC,#fff 62%);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.wrap{max-width:960px;margin:auto;padding:14px 14px 92px}.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;padding:18px 20px 22px;box-shadow:0 16px 40px rgba(11,43,80,.16)}
+.brand img{width:250px;height:84px;object-fit:contain;object-position:left center;background:#fff;border-radius:14px;padding:5px}.hero h1{font-size:30px;margin:18px 0 5px;letter-spacing:-.03em}.hero p{margin:0;color:#CBD9E8;font-size:13px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.nav button{height:42px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:0 14px;color:var(--muted);font-weight:850;cursor:pointer}.nav button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.page{display:none}.page.active{display:block}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 7px 25px rgba(30,53,82,.045)}.title{font-size:20px;font-weight:950}.sub{font-size:12px;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}.label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:900;margin-bottom:6px}input,select{width:100%;height:47px;border:1px solid var(--line);border-radius:11px;padding:0 12px;background:#fff;color:var(--ink);outline:none}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.btn{height:44px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:0 15px;font-weight:850;cursor:pointer}.primary{background:var(--blue);border-color:var(--blue);color:#fff}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}.chip{padding:7px 9px;border:1px solid var(--line);border-radius:99px;background:#fff;color:#52617A;font-size:10px;font-weight:850}
+.list{margin-top:13px;border:1px solid var(--line);border-radius:15px;overflow:hidden}.item{padding:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start;cursor:pointer}.item:first-child{border-top:0}.item:hover{background:#FBFDFF}.item b{font-size:14px}.meta{display:block;font-size:11px;color:var(--muted);margin-top:4px}.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:9px;font-weight:850;padding:5px 7px;border-radius:99px;border:1px solid #C9EADB;color:var(--green);background:var(--greenbg)}
+.status{font-size:10px;color:var(--muted);margin-top:9px}.ok{color:var(--green)}.err{color:#B42318}.empty{padding:28px;text-align:center;font-size:12px;color:var(--muted)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.box{border:1px solid var(--line);background:#FBFDFF;border-radius:15px;padding:14px}.metric{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;margin-top:10px;font-size:11px}.metric strong{font-size:22px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.fact{border:1px solid var(--line);background:#F7F9FC;border-radius:12px;padding:11px}.fact small{display:block;color:var(--muted)}.fact b{display:block;margin-top:4px;font-size:12px}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(960px,100%);background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px}.bottom button{border:0;background:none;color:var(--muted);font-size:10px;font-weight:850}.bottom button.active{color:var(--blue)}
+@media(max-width:620px){.grid,.compare,.facts{grid-template-columns:1fr}.brand img{width:205px;height:70px}.item{flex-direction:column}.tags{justify-content:flex-start}.hero h1{font-size:26px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="hero">
-  <div class="brand"><img src="Minha_Rede_Saude_logo.png" alt="Minha Rede Saúde"></div>
+  <div class="brand"><img src="/Minha_Rede_Saude_logo.png" alt="Minha Rede Saúde"></div>
   <h1>Onde seu plano atende?</h1>
   <p>Sua rede de atendimento em um só lugar.</p>
 </header>
-
 <nav class="nav">
   <button class="active" data-page="search">Consultar rede</button>
   <button data-page="compare">Comparar redes</button>
@@ -60,16 +38,15 @@ input,select{width:100%;height:47px;border:1px solid var(--line);border-radius:1
 <section id="search" class="page active">
 <div class="card">
   <div class="title">Consultar rede credenciada</div>
-  <div class="sub">Escolha a operadora, o produto e a cidade.</div>
+  <div class="sub">A pesquisa é feita por produto e cidade.</div>
   <div class="grid">
     <div><label class="label">Operadora</label><select id="op"><option>Carregando...</option></select></div>
     <div><label class="label">Produto</label><select id="product"><option>Carregando...</option></select></div>
-    <div><label class="label">Cidade</label><input id="city" placeholder="Digite a cidade"></div>
+    <div><label class="label">Cidade</label><input id="city" placeholder="Ex.: Belo Horizonte - MG"></div>
     <div><label class="label">Atendimento</label><select id="type"><option value="">Todos</option><option>Hospital</option><option>Pronto-socorro</option><option>Maternidade</option><option>Laboratório</option><option>Clínica</option></select></div>
   </div>
   <div class="row"><button class="btn primary" id="searchBtn">Buscar rede →</button></div>
-  <div id="summary" class="chips"></div>
-  <div id="results" class="list"></div>
+  <div id="summary" class="chips"></div><div id="results" class="list"></div>
   <div id="status" class="status">Conectando ao banco...</div>
 </div>
 </section>
@@ -81,99 +58,35 @@ input,select{width:100%;height:47px;border:1px solid var(--line);border-radius:1
   <div class="grid">
     <div><label class="label">Plano A</label><select id="planA"></select></div>
     <div><label class="label">Plano B</label><select id="planB"></select></div>
-    <div><label class="label">Cidade</label><input id="cmpCity" placeholder="Digite a cidade"></div>
+    <div><label class="label">Cidade</label><input id="cmpCity" placeholder="Ex.: Belo Horizonte - MG"></div>
     <div><label class="label">Atendimento</label><select id="cmpType"><option value="">Todos</option><option>Hospital</option><option>Pronto-socorro</option><option>Maternidade</option><option>Laboratório</option><option>Clínica</option></select></div>
   </div>
-  <div class="row"><button class="btn primary" id="compareBtn">Comparar →</button></div>
-  <div id="compareOut"></div>
+  <div class="row"><button class="btn primary" id="compareBtn">Comparar →</button></div><div id="compareOut"></div>
 </div>
 </section>
 
-<section id="products" class="page">
-<div class="card"><div class="title">Produtos</div><div class="sub">Produtos cadastrados no banco.</div><div id="productList" class="list"></div></div>
-</section>
+<section id="products" class="page"><div class="card"><div class="title">Produtos</div><div class="sub">Produtos cadastrados no banco.</div><div id="productList" class="list"></div></div></section>
 
-<section id="detail" class="page">
-<div class="card"><button class="btn" id="backBtn">← Voltar</button><div id="detailBox" style="margin-top:12px"></div></div>
-</section>
+<section id="detail" class="page"><div class="card"><button class="btn" id="backBtn">← Voltar</button><div id="detailBox" style="margin-top:12px"></div></div></section>
 </div>
 
-<nav class="bottom">
-<button class="active" data-page="search">⌕<br>Rede</button>
-<button data-page="compare">⇄<br>Comparar</button>
-<button data-page="products">▦<br>Produtos</button>
-</nav>
+<nav class="bottom"><button class="active" data-page="search">⌕<br>Rede</button><button data-page="compare">⇄<br>Comparar</button><button data-page="products">▦<br>Produtos</button></nav>
 
 <script>
-const op=document.getElementById("op");
-const product=document.getElementById("product");
 let allProducts=[];
-
+const op=document.getElementById("op"),product=document.getElementById("product");
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
-
-function show(id){
-  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));
-  document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));
-}
-async function getJson(url){
-  const r=await fetch(url,{headers:{Accept:"application/json"}});
-  const txt=await r.text();
-  if(!r.ok) throw new Error(txt||("HTTP "+r.status));
-  return JSON.parse(txt);
-}
-function fillProducts(){
-  const ps=allProducts.filter(p=>p.operator_name===op.value);
-  product.innerHTML=ps.length?ps.map(p=>`<option value="${esc(p.product_name)}">${esc(p.product_name)}</option>`).join(""):`<option>Nenhum produto cadastrado</option>`;
-}
-function buildCompareOptions(){
-  const opts=allProducts.map(p=>`<option value="${esc(p.operator_name)}|||${esc(p.product_name)}">${esc(p.operator_name)} — ${esc(p.product_name)}</option>`).join("");
-  document.getElementById("planA").innerHTML=opts;
-  document.getElementById("planB").innerHTML=opts;
-}
-async function load(){
-  try{
-    const ops=await getJson("/api/operators");
-    allProducts=await getJson("/api/products");
-    op.innerHTML=ops.map(o=>`<option>${esc(o.name)}</option>`).join("");
-    fillProducts();buildCompareOptions();
-    document.getElementById("productList").innerHTML=allProducts.map(p=>`<div class=item><div><b>${esc(p.operator_name)}</b><span class=meta>${esc(p.product_name)}</span></div></div>`).join("");
-    document.getElementById("status").textContent="Banco conectado.";
-  }catch(e){
-    document.getElementById("status").textContent="API indisponível. Confira se a pasta api está no deploy.";
-    op.innerHTML=`<option>Não carregou</option>`;product.innerHTML=`<option>Não carregou</option>`;
-  }
-}
-async function search(){
-  const city=document.getElementById("city").value.trim();
-  const type=document.getElementById("type").value;
-  document.getElementById("summary").innerHTML=`<span class=chip>${esc(op.value)}</span><span class=chip>${esc(product.value)}</span><span class=chip>${esc(city||"Cidade não informada")}</span>`;
-  if(!city){document.getElementById("results").innerHTML='<div class=item><b>Digite uma cidade.</b></div>';return;}
-  try{
-    const d=await getJson(`/api/network?operator=${encodeURIComponent(op.value)}&product=${encodeURIComponent(product.value)}&city=${encodeURIComponent(city)}&type=${encodeURIComponent(type)}`);
-    document.getElementById("results").innerHTML=d.rows.length?d.rows.map((x,i)=>`<div class=item data-i="${i}"><div><b>${esc(x.provider_name)}</b><span class=meta>${esc(x.provider_type||"Prestador")} • ${esc(x.address||city)}</span></div><div class=tags>${String(x.services||"").split(/[;,|]/).filter(Boolean).map(s=>`<span class=tag>${esc(s.trim())}</span>`).join("")}</div></div>`).join(""):`<div class=item><div><b>Nenhum prestador encontrado.</b><span class=meta>Essa combinação ainda pode não ter sido carregada.</span></div></div>`;
-    document.querySelectorAll("#results [data-i]").forEach(el=>el.onclick=()=>openDetail(d.rows[+el.dataset.i]));
-  }catch(e){
-    document.getElementById("results").innerHTML='<div class=item><div><b>Erro ao consultar a rede.</b><span class=meta>Verifique o deploy da API e as variáveis do Supabase.</span></div></div>';
-  }
-}
-function openDetail(x){
-  document.getElementById("detailBox").innerHTML=`<div class=detailTitle>${esc(x.provider_name)}</div><div class=meta>${esc(x.provider_type||"Prestador")} • ${esc(x.address||"")}</div><div class=facts><div class=fact><small>Operadora</small><b>${esc(op.value)}</b></div><div class=fact><small>Produto</small><b>${esc(product.value)}</b></div><div class=fact><small>Atendimentos</small><b>${esc(x.services||"Não informado")}</b></div><div class=fact><small>Telefone</small><b>${esc(x.phone||"Não informado")}</b></div></div>`;
-  show("detail");
-}
-async function compare(){
-  const a=document.getElementById("planA").value.split("|||"), b=document.getElementById("planB").value.split("|||");
-  const city=document.getElementById("cmpCity").value.trim(), type=document.getElementById("cmpType").value;
-  if(!city){document.getElementById("compareOut").innerHTML='<div class=meta>Digite uma cidade.</div>';return;}
-  try{
-    const d=await getJson(`/api/compare?operatorA=${encodeURIComponent(a[0])}&productA=${encodeURIComponent(a[1])}&operatorB=${encodeURIComponent(b[0])}&productB=${encodeURIComponent(b[1])}&city=${encodeURIComponent(city)}&type=${encodeURIComponent(type)}`);
-    document.getElementById("compareOut").innerHTML=`<div class=compare><div class=box><b>${esc(a[0])} — ${esc(a[1])}</b><div class=metric><span>Exclusivos</span><strong>${d.summary.onlyA}</strong></div></div><div class=box><b>${esc(b[0])} — ${esc(b[1])}</b><div class=metric><span>Exclusivos</span><strong>${d.summary.onlyB}</strong></div></div></div><div class=box style="margin-top:10px"><b>Rede em comum</b><div class=metric><span>Prestadores</span><strong>${d.summary.common}</strong></div></div>`;
-  }catch(e){document.getElementById("compareOut").innerHTML='<div class=meta>Não foi possível comparar ainda.</div>';}
-}
+async function api(url){const r=await fetch(url,{headers:{Accept:"application/json"}});const t=await r.text();if(!r.ok)throw new Error(t||("HTTP "+r.status));return JSON.parse(t);}
+function show(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));}
+function fillProducts(){const ps=allProducts.filter(p=>p.operator_name===op.value);product.innerHTML=ps.length?ps.map(p=>`<option>${esc(p.product_name)}</option>`).join(""):`<option>Nenhum produto cadastrado</option>`;}
+function buildCompare(){const o=allProducts.map(p=>`<option value="${esc(p.operator_name)}|||${esc(p.product_name)}">${esc(p.operator_name)} — ${esc(p.product_name)}</option>`).join("");planA.innerHTML=o;planB.innerHTML=o;}
+async function load(){try{const [ops,ps]=await Promise.all([api("/api/operators"),api("/api/products")]);op.innerHTML=ops.map(o=>`<option>${esc(o.name)}</option>`).join("");allProducts=ps;fillProducts();buildCompare();productList.innerHTML=ps.length?ps.map(p=>`<div class=item><div><b>${esc(p.operator_name)}</b><span class=meta>${esc(p.product_name)}</span></div></div>`).join(""):`<div class=empty>Nenhum produto cadastrado.</div>`;status.textContent="Banco conectado.";status.className="status ok";}catch(e){status.textContent="Não foi possível conectar à API.";status.className="status err";}}
+async function search(){const c=city.value.trim(),t=type.value;summary.innerHTML=`<span class=chip>${esc(op.value)}</span><span class=chip>${esc(product.value)}</span><span class=chip>${esc(c||"Cidade não informada")}</span>`;if(!c){results.innerHTML='<div class=empty>Digite uma cidade.</div>';return;}try{const d=await api(`/api/network?operator=${encodeURIComponent(op.value)}&product=${encodeURIComponent(product.value)}&city=${encodeURIComponent(c)}&type=${encodeURIComponent(t)}`);results.innerHTML=d.rows.length?d.rows.map((x,i)=>`<div class=item data-i="${i}"><div><b>${esc(x.provider_name)}</b><span class=meta>${esc(x.provider_type||"Prestador")} • ${esc(x.address||c)}</span></div><div class=tags>${String(x.services||"").split(/[;,|]/).filter(Boolean).map(s=>`<span class=tag>${esc(s.trim())}</span>`).join("")}</div></div>`).join(""):'<div class=empty>Nenhum prestador encontrado para essa combinação.</div>';window.__rows=d.rows;document.querySelectorAll("#results [data-i]").forEach(e=>e.onclick=()=>openDetail(window.__rows[+e.dataset.i]));}catch(e){results.innerHTML='<div class=empty>Erro ao consultar a rede.</div>';}}
+function openDetail(x){detailBox.innerHTML=`<div class=title>${esc(x.provider_name)}</div><div class=meta>${esc(x.provider_type||"Prestador")} • ${esc(x.address||"")}</div><div class=facts><div class=fact><small>Operadora</small><b>${esc(op.value)}</b></div><div class=fact><small>Produto</small><b>${esc(product.value)}</b></div><div class=fact><small>Atendimentos</small><b>${esc(x.services||"Não informado")}</b></div><div class=fact><small>Telefone</small><b>${esc(x.phone||"Não informado")}</b></div></div>`;show("detail");}
+async function compare(){const a=planA.value.split("|||"),b=planB.value.split("|||"),c=cmpCity.value.trim(),t=cmpType.value;if(!c){compareOut.innerHTML='<div class=empty>Digite uma cidade.</div>';return;}try{const d=await api(`/api/compare?operatorA=${encodeURIComponent(a[0])}&productA=${encodeURIComponent(a[1])}&operatorB=${encodeURIComponent(b[0])}&productB=${encodeURIComponent(b[1])}&city=${encodeURIComponent(c)}&type=${encodeURIComponent(t)}`);compareOut.innerHTML=`<div class=compare><div class=box><b>${esc(a[0])} — ${esc(a[1])}</b><div class=metric><span>Exclusivos</span><strong>${d.summary.onlyA}</strong></div></div><div class=box><b>${esc(b[0])} — ${esc(b[1])}</b><div class=metric><span>Exclusivos</span><strong>${d.summary.onlyB}</strong></div></div></div><div class=box style="margin-top:10px"><b>Rede em comum</b><div class=metric><span>Prestadores</span><strong>${d.summary.common}</strong></div></div>`;}catch(e){compareOut.innerHTML='<div class=empty>Não foi possível comparar.</div>';}}
 document.querySelectorAll("[data-page]").forEach(b=>b.onclick=()=>show(b.dataset.page));
-op.onchange=fillProducts;
-document.getElementById("searchBtn").onclick=search;
-document.getElementById("compareBtn").onclick=compare;
-document.getElementById("backBtn").onclick=()=>show("search");
+op.onchange=fillProducts;searchBtn.onclick=search;compareBtn.onclick=compare;backBtn.onclick=()=>show("search");
 load();
 </script>
-</body></html>
+</body>
+</html>

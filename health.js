@@ -1,0 +1,1 @@
+export default function handler(req,res){res.status(200).json({ok:true,service:"Minha Rede Saúde",time:new Date().toISOString()})}
