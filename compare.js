@@ -1,0 +1,1 @@
+export default async function handler(req,res){res.status(200).json({common:[],onlyA:[],onlyB:[],summary:{common:0,onlyA:0,onlyB:0},note:'Comparador pronto para a carga da rede.'});}
