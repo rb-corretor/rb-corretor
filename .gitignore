@@ -1,0 +1,4 @@
+.env
+.env.local
+rede_bh.csv
+rede_bh.normalized.csv

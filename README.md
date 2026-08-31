@@ -26,7 +26,7 @@ Execute `001_producao.sql` no SQL Editor. O script cria apenas a estrutura, RLS,
 
 ## Base única e importação de Belo Horizonte
 
-As APIs usam exclusivamente `network_data`; execute `002_network_data.sql` no Supabase antes da publicação. O arquivo `rede_bh.csv` não está presente neste repositório. Quando ele for disponibilizado, a importação completa e idempotente é:
+As APIs usam exclusivamente `network_data`; execute `002_network_data.sql` no Supabase antes da publicação. O CSV de BH usado nesta entrega está em `C:\Users\User\Downloads\rede_bh.csv` e contém identificadores de plano (`ID_PLANO`), não nomes comerciais. A importação completa e idempotente é:
 
 ```powershell
 Copy-Item .env.example .env.local # preencha as chaves localmente
