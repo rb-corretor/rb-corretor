@@ -10,6 +10,8 @@ create index if not exists idx_cities_lookup on public.cities(city_name,state_co
 create index if not exists idx_providers_city on public.providers(city_id);
 create index if not exists idx_network_product on public.network(product_id);
 create index if not exists idx_network_provider on public.network(provider_id);
+create index if not exists idx_network_active_product_provider on public.network(product_id,provider_id) where active=true and status='active';
+create index if not exists idx_providers_active_city_type on public.providers(city_id,provider_type) where active=true;
 do $$ begin if not exists(select 1 from pg_constraint where conname='products_operator_id_fkey') then alter table public.products add constraint products_operator_id_fkey foreign key(operator_id) references public.operators(id) on delete cascade; end if; if not exists(select 1 from pg_constraint where conname='providers_city_id_fkey') then alter table public.providers add constraint providers_city_id_fkey foreign key(city_id) references public.cities(id) on delete set null; end if; if not exists(select 1 from pg_constraint where conname='network_product_id_fkey') then alter table public.network add constraint network_product_id_fkey foreign key(product_id) references public.products(id) on delete cascade; end if; if not exists(select 1 from pg_constraint where conname='network_provider_id_fkey') then alter table public.network add constraint network_provider_id_fkey foreign key(provider_id) references public.providers(id) on delete cascade; end if; end $$;
 alter table public.operators enable row level security; alter table public.products enable row level security; alter table public.cities enable row level security; alter table public.providers enable row level security; alter table public.network enable row level security;
 drop policy if exists public_read_operators on public.operators; create policy public_read_operators on public.operators for select using(active=true);
@@ -17,4 +19,5 @@ drop policy if exists public_read_products on public.products; create policy pub
 drop policy if exists public_read_cities on public.cities; create policy public_read_cities on public.cities for select using(true);
 drop policy if exists public_read_providers on public.providers; create policy public_read_providers on public.providers for select using(active=true);
 drop policy if exists public_read_network on public.network; create policy public_read_network on public.network for select using(active=true and status='active');
-insert into public.operators(name,short_name) values('Amil','AMIL'),('SulAmérica','SULAMERICA'),('MedSênior','MEDSENIOR'),('Aurora Saúde','AURORA'),('Bradesco Saúde','BRADESCO'),('Unimed','UNIMED'),('Hapvida','HAPVIDA'),('NotreDame','NOTREDAME'),('Usisaúde','USISAUDE') on conflict(name) do nothing;
+grant usage on schema public to anon, authenticated;
+grant select on public.operators, public.products, public.cities, public.providers, public.network to anon, authenticated;

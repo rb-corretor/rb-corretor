@@ -1,5 +1,13 @@
 {
   "name": "minha-rede-saude",
   "private": true,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check api/_shared.js && node --check api/operators.js && node --check api/products.js && node --check api/network.js && node --check api/compare.js && node --check api/health.js",
+    "test:api": "node scripts/test-api.mjs",
+    "dev": "node scripts/local-server.mjs",
+    "prepare:bh": "node scripts/prepare-rede-bh.mjs",
+    "import:network": "node scripts/import-network-data.mjs"
+  }
 }
