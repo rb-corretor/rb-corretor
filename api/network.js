@@ -3,7 +3,8 @@ import { parseCity, requireKey, rpc, sendError } from "./_shared.js";
 export default async function handler(req, res) {
   try {
     const operatorKey = requireKey(req.query?.operatorKey, "operatorKey");
-    const productKey = requireKey(req.query?.productKey || req.query?.productId, "productKey");
+    // idPlano é o identificador do catálogo e o mesmo valor usado para indexar network_data.
+    const productKey = requireKey(req.query?.idPlano || req.query?.productKey || req.query?.productId, "idPlano");
     const city = parseCity(req.query?.city);
     const rows = await rpc("mrs_search_network", { p_operator_key: operatorKey, p_product_key: productKey, p_city_key: city.cityKey, p_state_code: city.stateCode || null, p_type: req.query?.type || null, p_limit: 100 });
     const total = rows[0]?.total_count || 0;

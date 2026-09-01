@@ -20,8 +20,8 @@ Execute `001_producao.sql` no SQL Editor. O script cria apenas a estrutura, RLS,
 
 ## Contratos das APIs
 - `GET /api/operators`: operadoras ativas de `network_data` (até 100).
-- `GET /api/products?operatorKey=<chave>`: produtos ativos daquela operadora (até 100).
-- `GET /api/network?operatorKey=<chave>&productKey=<chave>&city=Belo%20Horizonte%20-%20MG&type=Hospital`: rede limitada a 100 resultados. A cidade aceita também `Belo Horizonte` e `Belo Horizonte MG`.
+- `GET /api/products?operatorKey=<chave>`: consulta a visão `catalogo_produtos` e retorna `operadora`, `id_plano`, `cd_plano` e `nome_comercial` (até 100), sem expor os códigos na interface. Caso a visão tenha outro nome, defina `PRODUCT_CATALOG_VIEW`.
+- `GET /api/network?operatorKey=<chave>&idPlano=<id_plano>&city=Belo%20Horizonte%20-%20MG&type=Hospital`: rede limitada a 100 resultados, filtrada pelo `id_plano` do catálogo. A cidade aceita também `Belo Horizonte` e `Belo Horizonte MG`.
 - `GET /api/compare?operatorAKey=<chave>&productAKey=<chave>&operatorBKey=<chave>&productBKey=<chave>&city=Belo%20Horizonte`: comparação limitada a 500 prestadores por produto; a resposta sinaliza `truncated` se for preciso refinar.
 
 ## Base única e importação de Belo Horizonte
